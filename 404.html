@@ -26,12 +26,13 @@ Created by daviinacio on 19/09/2019
     
         <link rel="stylesheet" href="/assets/fonts/icon.css"/>
         <link rel="stylesheet" href="/assets/css/materialize.min.css"/>
-        <!-- <link rel="stylesheet" href="/assets/css/style.css"/> -->
+        <link rel="stylesheet" href="/assets/css/style.css"/>
         
     </head>
     <body ng-controller="myAppCtrl">
-        <span style="font-size: 25px; background: #ee2222; width: 100%; text-align: center; position: absolute; top: 0; color: #eee;">Este site está em construção. Volte mais tarde</span> 
-        <main><div ng-view> </div></main>
+        <span ng-show="ondev" style="display: none; font-size: 25px; background: #ee2222; width: 100%; text-align: center; position: absolute; top: 0; color: #eee;">Este site está em construção. Volte mais tarde</span> 
+        <main ng-view></main>
+        
         
         <!-- Libraries --> 
         <script type="text/javascript" src="/assets/libs/jquery-3.3.1.min.js"></script>
@@ -43,6 +44,12 @@ Created by daviinacio on 19/09/2019
         <script type="text/javascript" src="/app/app.module.js"></script>
         <script type="text/javascript" src="/app/app.routes.js"></script>
         <script type="text/javascript" src="/app/components/home/HomeController.js"></script>
+
+        <footer>
+                <div class="container">
+                        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                </div>
+        </footer>
         
     </body>
 </html>
