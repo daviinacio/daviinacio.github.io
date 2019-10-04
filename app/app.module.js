@@ -8,6 +8,11 @@ app.run(function(){
     }
     
     console.log("Run");
+	
+	$(document).contextmenu(function(){
+		console.log("Context menu canceled");
+		return false;
+	});
 });
 
 app.controller('myAppCtrl',['$scope', '$routeParams', '$rootScope', function($scope, $routeParams, $rootScope){
