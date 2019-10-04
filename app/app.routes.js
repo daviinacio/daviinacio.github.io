@@ -10,12 +10,30 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
         templateUrl : '/app/components/home/home.html',
         controller  : 'HomeController',
         resolve: {
-            init: function() {
-              return function() {
-                console.log('Loading Home');
-              }
-            }
-          }
+			// Learning articles
+			// https://carlofontanos.com/angularjs-show-route-only-after-all-ajax-requests-are-resolved/
+			// https://rafaell-lycan.com/2017/angular-tips-about-promises-and-http-service/
+			
+			github_user: function($http, $route){
+                return $http.get('https://api.github.com/users/daviinacio').then(function(response){
+                    return response.data;
+                })
+				.catch(function(err){
+					return {
+						name: "Offline",
+						bio: "Was not possible get data from github api"
+					};
+				});
+            }/*,
+			api_apps: function($http, $route){
+                return $http.get('https://api.daviapps.com/apps').then(function(response){
+                    return response.data;
+                })
+				.catch(function(err){
+					return {};
+				});
+            }*/
+		}
     })
     .when('/projetos', {
         templateUrl : '/app/components/home/home.html',

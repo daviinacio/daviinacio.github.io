@@ -30,6 +30,7 @@ main {
 }
 
 #top .name {
+	font-size: 40px;
     margin: 0;
 }
 
@@ -54,9 +55,9 @@ main {
 }
 
 #top .social-col p {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .logo-img {
