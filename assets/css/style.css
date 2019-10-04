@@ -24,7 +24,8 @@ main {
 
 
 #top .avatar {
-    width: 250px;
+    width: calc(50%);
+	max-width: 250px;
     border-radius: 50%;
     border: solid 2.5px #eee;
 }
@@ -61,5 +62,5 @@ main {
 }
 
 .logo-img {
-    width: 50px;
+	width: 50px;
 }
