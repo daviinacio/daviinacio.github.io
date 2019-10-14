@@ -24,8 +24,8 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
 						bio: "Was not possible get data from github api"
 					};
 				});
-            }/*,
-			api_apps: function($http, $route){
+            },
+			/*api_apps: function($http, $route){
                 return $http.get('https://api.daviapps.com/apps').then(function(response){
                     return response.data;
                 })
@@ -35,6 +35,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
             }*/
 		}
     })
+
     .when('/projetos', {
         templateUrl : '/app/components/home/home.html',
         controller  : 'HomeController',
