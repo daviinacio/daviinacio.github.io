@@ -13,8 +13,8 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
 			// Learning articles
 			// https://carlofontanos.com/angularjs-show-route-only-after-all-ajax-requests-are-resolved/
 			// https://rafaell-lycan.com/2017/angular-tips-about-promises-and-http-service/
-			
-			github_user: function($http, $route){
+
+			data: function($http, $route){
                 return $http.get('https://api.github.com/users/daviinacio').then(function(response){
                     return response.data;
                 })
@@ -98,12 +98,12 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
     .when('/403', {
         templateUrl : '/app/components/errors/error.html',
         controller  : 'ErrorController'
-    })
+    })*/
     .when('/404', {
-        templateUrl : '/app/components/errors/error.html',
-        controller  : 'ErrorController'
+        templateUrl : '/app/components/error/404.html'//,
+        //controller  : 'ErrorController'
     })
-    .when('/501', {
+    /*.when('/501', {
         templateUrl : '/app/components/errors/error.html',
         controller  : 'ErrorController'
     })*/

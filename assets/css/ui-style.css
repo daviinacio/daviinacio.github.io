@@ -1,0 +1,277 @@
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+html, body, section {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+section.full {
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+    .container { width: 85%; }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {  width: 70%; }
+}
+
+.container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+/* Typograph */
+
+h1 {
+    font-weight: 400;
+    font-size: 3.5em;
+    margin: 0.12em 0;
+}
+
+h1 + p {
+    font-size: 20px;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  {
+    margin-top: -0.2em;
+}
+
+/* Colors */
+body {
+    background: #212121;
+}
+
+body, p, a:hover, a:active {
+    color: #eee;
+}
+
+a {
+    color: #afafaf;
+    text-decoration: none;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p  {
+    color: #aaa;
+}
+
+/* Text Decoration */
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* List */
+ul, ol {
+    padding: 2.5px;
+    display: inline-block;
+}
+
+ul li, ol li {
+    list-style-position: outside;
+    border-bottom: 1px #777 solid;
+}
+
+ul li:last-child, ol li:last-child {
+    border-bottom: none;
+}
+
+ul li *, ol li * {
+    padding: 7.5px;
+    display: block;
+}
+
+ul li:hover, ol li:hover {
+    background: rgba(255, 255, 255, 0.3)
+}
+
+ul.small, ol.small {
+    font-size: 15px;
+}
+
+ul.medium, ol.medium {
+    font-size: 20px;
+}
+
+ul.large, ol.large {
+    font-size: 30px;
+}
+
+ul.box, ol.box {
+    border: 1px #777 solid;
+}
+
+ul.box li, ol.box li {
+    border: 1px #777 solid;
+}
+
+/* Unordered Lists */
+ul li {
+    list-style: none;
+}
+
+ul.circle li { list-style-type: circle; }
+ul.square li { list-style-type: square; }
+
+ul.circle li, ul.square li {
+    border-left: 1px #777 solid;
+}
+
+
+/* Ordered Lists */
+ol li {
+    list-style-type: decimal-leading-zero;
+    border-left: 1px #777 solid;
+}
+
+ol.roman li { list-style-type: upper-roman; }
+ol.alfa li {  list-style-type: upper-alpha; }
+
+/* Icon */
+.icon {
+    border: 0;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.icon + p {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* Image */
+img.avatar {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px #eee solid;
+}
+
+img.avatar.small {
+    max-width: 50px;
+    border: 1px #eee solid;
+}
+
+img.avatar.medium {
+    max-width: 250px;
+    border: 2px #eee solid;
+}
+
+img.avatar.large {
+    max-width: 400px;
+    border: 3px #eee solid;
+}
+
+img.avatar.xlarge {
+    max-width: 750px;
+    border: 4px #eee solid;
+}
+
+img.bunner {
+    box-shadow: inset 0 -30px 75px rgba(0, 0, 0, 1);
+}
+
+/* Helpers */
+.fill-x {
+    width: 100%;
+}
+
+.fill-y {
+    height: 100%;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.right-align {
+    text-align: left;
+}
+
+.left-align {
+    text-align: right;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.top-align {
+    /* display: -webkit-box; */
+    /* display: -webkit-flex; */
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-box-align: flex-start; */
+    /* -webkit-align-items: flex-start; */
+    /* -ms-flex-align: flex-start; */
+    align-items: flex-start;
+}
+
+.bottom-align {
+    /* display: -webkit-box; */
+    /* display: -webkit-flex; */
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-box-align: flex-end; */
+    /* -webkit-align-items: flex-end; */
+    /* -ms-flex-align: flex-end; */
+    align-items: flex-end;
+}
+
+.middle-align {
+    /* display: -webkit-box; */
+    /* display: -webkit-flex; */
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-box-align: center; */
+    /* -webkit-align-items: center; */
+    /* -ms-flex-align: center; */
+    align-items: center;
+}
+
+/* Scroll bar style */
+@media (min-width:580px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgb(0, 0, 0, 0.3);
+        background: rgba(218, 218, 218, 1);
+/*         border: 1px solid rgba(255, 255, 255, 0); */
+    }
+
+    ::-moz-selection { background: rgba(132, 178, 224, 0.75); color: #fff; }
+    ::selection { background: rgba(25, 118, 210, 0.75); color: #fff; }
+}

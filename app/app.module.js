@@ -6,15 +6,21 @@ app.run(function(){
         console.log("%c DaviApps", "color:darkcyan; font-size:50px;");
         console.log("%c This website was builded with AngularJS and MaterializeCSS", "color:#003087; font-size:12px;");
     }
-    
+
     console.log("Run");
-	
+
 	$(document).contextmenu(function(){
-		console.log("Context menu canceled");
-		return false;
+        if(location.host.includes('gitpod') || location.host.includes('localhost')){
+            console.info("Context menu allowd on development mode");
+		    return true;
+        }
+		else {
+            console.info("Context menu canceled");
+		    return false;
+        }
 	});
 });
 
 app.controller('myAppCtrl',['$scope', '$routeParams', '$rootScope', function($scope, $routeParams, $rootScope){
-    
+
 }]);
