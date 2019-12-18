@@ -1,4 +1,5 @@
-<!doctype html><!--
+<!doctype html>
+<!--
 
 
     ____    __ ___    _ _     __ _ _ __  _ __  ___
@@ -11,43 +12,46 @@ Created by daviinacio on 19/09/2019
 
 -->
 <html ng-app="myApp" lang="br">
-    <head>
-        <base href="/">
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta name="description" content="Aqui você pode baixar nossos apps, ler nossos posts e contribuir com nossos projetos open source." />
-        <meta name="keywords" content="daviapps, opensource, apps, posts, blog, aplicativo" />
-        <meta name="author" content="Davi Inácio" />
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="author" content="Davi Inácio" />
 
-        <title>Davi Inácio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>Davi Inácio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-        <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css"/>
-        <!-- <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/> -->
-        <link rel="stylesheet" href="/assets/css/ui-style.css"/>
+	<link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/assets/css/ui-style.css"/>
 
-        <!-- Libraries -->
-        <script type="text/javascript" src="/assets/libs/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="/assets/libs/angular.min.js"></script>
-        <script type="text/javascript" src="/assets/libs/angular-route.min.js"></script>
-
-    </head>
-    <body ng-controller="myAppCtrl">
-        <span ng-show="ondev" style="display: none; font-size: 25px; background: #ee2222; width: 100%; text-align: center; position: absolute; top: 0; color: #eee;">Este site está em construção. Volte mais tarde</span>
+	<!-- Libraries -->
+    <script type="text/javascript" src="/assets/libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/assets/libs/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/libs/angular-route.min.js"></script>
+</head>
+<body ng-controller="myAppCtrl">
+	<header>
+		<div class="container">
+			<h1><a href="#overview">daviinacio</a></h1>
+			<nav>
+				<ul>
+					<li><a href="/#skills">skills</a></li>
+					<li><a href="/#contact">contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="wrap">
         <main ng-view></main>
 
         <!-- Angular Modules -->
         <script type="text/javascript" src="/app/app.module.js"></script>
         <script type="text/javascript" src="/app/app.routes.js"></script>
         <script type="text/javascript" src="/app/components/home/HomeController.js"></script>
-
-        <footer>
-                <div class="container">
-                        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-                </div>
-        </footer>
-
-    </body>
+		<footer>
+		</footer>
+	</div>
+    <script src="/assets/js/ui-script.js"></script>
+</body>
 </html>
