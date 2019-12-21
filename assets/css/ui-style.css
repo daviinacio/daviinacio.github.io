@@ -3,6 +3,14 @@
     --background2: #2d2d2d;
     --foreground: #eee;
     --foreground2: #ccc;
+
+    --reverse-foreground: #1d1d1d;
+    --reverse-background: #eee;
+
+    --warning-foreground: #000;
+    --warning-background: rgb(250, 226, 11);
+
+    --accent-color: #1d1d1d;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
@@ -45,7 +53,8 @@ header {
     width: 100%;
     background: rgba(29, 29, 29, 0.25);
     transition: background 1s, height 0.4s;
-    height: 75px;
+    height: 50px;
+    z-index: 50;
 }
 
 header * {
@@ -96,10 +105,18 @@ header nav li {
 }
 
 main section {
-    min-height: 100%;
     display: flex;
-    padding-top: 50px;
     border-bottom: 1px solid var(--foreground);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* box-shadow: 0 0 1000px 200px #000 inset; */
+}
+
+main section .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    z-index: 20;
 }
 
 div.middle {
@@ -114,8 +131,75 @@ div.center {
 
 /* Sections */
 #overview {
-    background-image: url('/assets/img/bg-matrix.png');
-    box-shadow: 0 0 1000px 200px #000 inset;
+    background-image: url('/assets/img/bunner-python.jpg');
+}
+
+#skills {
+    /* margin-top: 100%; */
+}
+
+#contact {
+    background-image: url('/assets/img/bunner-notebook.jpg');
+}
+
+.black-overlay {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 1px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+div.full, section.full {
+    min-height: 100%;
+}
+
+/* Form */
+textarea:focus, input:focus, select {
+    outline: none;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    /* background: rgba(255, 255, 255, 0.9); */
+    background-color: var(--reverse-background);
+    border-radius: 2px;
+    padding: 20px;
+    color: var(--reverse-foreground);
+}
+
+input[type=text], select, textarea {
+    color: var(--reverse-foreground);
+    width: 100%;
+    padding: 8px 4px;
+    margin: 2px 0 10px 0;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid var(--accent-color);
+    font-size: 16px;
+}
+
+input[type=submit] {
+    border: none;
+    background: var(--accent-color);
+    color: var(--foreground);
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+form label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card, input[type=submit] {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
 /* Image */
@@ -162,3 +246,21 @@ img.avatar.xlarge {
 
 ::-moz-selection { background: rgba(25, 118, 210, 0.75); color: #fff; }
 ::selection { background: rgba(25, 118, 210, 0.75); color: #fff; }
+
+
+/* Utils */
+
+.warning-text {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px;
+    transform: rotate(-45deg);
+    /* transform: skewY(-45deg); */
+    /* width: 100%; */
+    color: var(--warning-foreground);
+    background-color: var(--warning-background);
+}
+
+.warning-text * {
+    /* transform: rotate(-45deg); */
+}

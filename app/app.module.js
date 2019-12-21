@@ -22,5 +22,5 @@ app.run(function(){
 });
 
 app.controller('myAppCtrl',['$scope', '$routeParams', '$rootScope', function($scope, $routeParams, $rootScope){
-
+    console.log("kj");
 }]);

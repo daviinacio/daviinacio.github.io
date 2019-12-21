@@ -1,4 +1,5 @@
-<section id="overview">
+<section id="overview" class="full">
+    <div class="black-overlay"></div>
     <div class="container middle">
         <div class="center">
             <img class="avatar medium" src="https://avatars2.githubusercontent.com/u/19656901?v=4" alt="daviinacio" />
@@ -8,16 +9,40 @@
     </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="full">
     <div class="container">
         <h1>Skills</h1>
 
-        <div style="background: red; height: 200vh"></div>
+        <div class="middle full">
+            <div class="warning-text">Em desenvolvimento!!</div>
+        </div>
     </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="full">
+    <div class="black-overlay"></div>
     <div class="container">
-        <h1>Contato</h1>
+        <h1 class="center">Contato</h1>
+        <div class="middle full">
+            <form class="card" action="https://api.daviapps.com/mailto/daviinacio" method="post">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome..">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Seu e-mail..">
+
+                <label for="country">Pais</label>
+                <select id="country" name="country">
+                    <option value="brazil">Brasil</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="area" style="resize:none" rows="5" placeholder="Digite sua mensagem.."/>
+            
+                <input type="submit" value="Enviar &nbsp ❯"/>
+            </form>
+        </div>
     </div>
 </section>
