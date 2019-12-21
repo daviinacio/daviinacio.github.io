@@ -1,7 +1,9 @@
 angular.module('myApp').controller('HomeController', function($scope, $location, data){
     //console.log("page/home");
 
-	$scope.user = data;
+    $scope.user = data;
+    
+    console.log(data);
 
 	//$('title').html($scope.user.name);
 

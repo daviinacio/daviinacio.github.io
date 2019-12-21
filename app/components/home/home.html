@@ -2,9 +2,11 @@
     <div class="black-overlay"></div>
     <div class="container middle">
         <div class="center">
-            <img class="avatar medium" src="https://avatars2.githubusercontent.com/u/19656901?v=4" alt="daviinacio" />
-            <h1>Davi Inácio</h1>
-            <p>Full Stack and Android developer.</p>
+            <a href="{{ user.blog }}">
+                <img class="avatar medium" src="{{ user.avatar_url }}" alt="daviinacio" />
+            </a>
+            <h1>{{ user.name }}</h1>
+            <p>{{ user.bio }}</p>
         </div>
     </div>
 </section>
@@ -31,6 +33,14 @@
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" placeholder="Seu e-mail..">
 
+                <label for="subject">Assunto</label>
+                <select id="subject" name="subject">
+                    <option value="budget">Orçamento</option>
+                    <option value="android">Aplicativo android</option>
+                    <option value="website">Website</option>
+                    <option value="others">Outro..</option>
+                </select>
+
                 <label for="country">Pais</label>
                 <select id="country" name="country">
                     <option value="brazil">Brasil</option>
@@ -39,7 +49,7 @@
                 </select>
 
                 <label for="message">Mensagem</label>
-                <textarea id="message" name="area" style="resize:none" rows="5" placeholder="Digite sua mensagem.."/>
+                <textarea id="message" name="message" style="resize:none" rows="5" placeholder="Digite sua mensagem.."/>
             
                 <input type="submit" value="Enviar &nbsp ❯"/>
             </form>
