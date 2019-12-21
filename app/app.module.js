@@ -1,6 +1,8 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.run(function(){
+    updateHeaderPosition();
+    
     // Console alert
     if(window.console || "console" in window) {
         console.log("%c DaviApps", "color:darkcyan; font-size:50px;");
@@ -21,6 +23,19 @@ app.run(function(){
 	});
 });
 
-app.controller('myAppCtrl',['$scope', '$routeParams', '$rootScope', function($scope, $routeParams, $rootScope){
-    console.log("kj");
-}]);
+app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location){
+    $scope.$on('$routeChangeSuccess', function(next, current){
+        updateHeaderPosition();
+    });
+});
+
+
+// TEMP
+function updateHeaderPosition(){
+    const header = document.querySelector('header');
+
+    if(location.pathname !== '/')
+        header.classList.add('top');
+    else
+        header.classList.remove('top');
+}
