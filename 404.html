@@ -22,13 +22,16 @@ Created by daviinacio on 19/09/2019
 	<title>Davi Inácio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-	<link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="/assets/css/ui-style.css"/>
 
 	<!-- Libraries -->
     <script type="text/javascript" src="/assets/libs/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/assets/libs/angular.min.js"></script>
     <script type="text/javascript" src="/assets/libs/angular-route.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css" />
+
+    <script src="/assets/libs/vanilla-toasts/vanillatoasts.js"></script>
+    <link rel="stylesheet" href="/assets/libs/vanilla-toasts/vanillatoasts.css">
 </head>
 <body ng-controller="myAppCtrl">
 	<header>
@@ -36,7 +39,7 @@ Created by daviinacio on 19/09/2019
 			<h1><a href="/#overview">daviinacio</a></h1>
 			<nav>
 				<ul>
-					<li><a href="/#skills">skills</a></li>
+					<li><a href="/#portifolio">portifólio</a></li>
 					<li><a href="/#contact">contato</a></li>
 				</ul>
 			</nav>
@@ -49,9 +52,10 @@ Created by daviinacio on 19/09/2019
         <script type="text/javascript" src="/app/app.module.js"></script>
         <script type="text/javascript" src="/app/app.routes.js"></script>
         <script type="text/javascript" src="/app/components/home/HomeController.js"></script>
+        <script type="text/javascript" src="/app/components/error/ErrorController.js"></script>
+        <script type="text/javascript" src="/app/shared/header/header-services.js"></script>
 		<footer>
 		</footer>
 	</div>
-    <script src="/assets/js/ui-script.js"></script>
 </body>
 </html>

@@ -100,8 +100,8 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
         controller  : 'ErrorController'
     })*/
     .when('/404', {
-        templateUrl : '/app/components/error/404.html'//,
-        //controller  : 'ErrorController'
+        templateUrl : '/app/components/error/404.html',
+        controller  : 'ErrorController'
     })
     /*.when('/501', {
         templateUrl : '/app/components/errors/error.html',

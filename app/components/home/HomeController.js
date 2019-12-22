@@ -1,12 +1,45 @@
-angular.module('myApp').controller('HomeController', function($scope, $location, data){
-    //console.log("page/home");
-
+angular.module('myApp').controller('HomeController', function($scope, $location, $http, data){
     $scope.user = data;
-    
-    console.log(data);
 
-	//$('title').html($scope.user.name);
+    const contactForm = document.querySelector('#contactForm');
 
+    /*$('#contactForm').submit(function (e) {
+        const values = $(e.target).serializeArray();
+        console.log(values);
+
+        return false;
+    });*/
+
+
+    /*contactForm.onsubmit = function(e){
+
+
+
+        console.log('submit', $(e.target).serializeArray(), serialize(e.target));
+        return true;
+    }**/
+
+    /*$('#contactForm').submit(function (e) {
+
+        console.log($(this).serialize());
+        //\return false;
+
+        console.log(e);
+        $http({
+            url: 'https://api.daviapps.com/mailto/daviinacio',
+            method: "POST",
+            data: $(this).serialize()
+        })
+        .then(function(response) {
+            console.log(response);
+            // success
+        }, 
+        function(response) { // optional
+            console.error(response);
+            // failed
+        });
+        return false;
+    });*/
 });
 
 
