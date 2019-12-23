@@ -26,14 +26,15 @@
     <div class="container">
         <h1 class="center">Contato</h1>
         <div class="middle full">
+            <!-- action="https://api.daviapps.com/mailto/daviinacio" -->
             <form id="contactForm" class="card" method="post" action="https://api.daviapps.com/mailto/daviinacio">
-                <label for="name">Nome</label>
+                <label for="name">Nome<i class="required">*</i></label>
                 <input type="text" id="name" name="name" placeholder="Seu nome..">
 
-                <label for="email">Email</label>
+                <label for="email">Email<i class="required">*</i></label>
                 <input type="text" id="email" name="email" placeholder="Seu e-mail..">
 
-                <label for="subject">Assunto</label>
+                <label for="subject">Assunto<i class="required">*</i></label>
                 <select id="subject" name="subject">
                     <option value="budget">Orçamento</option>
                     <option value="android">Aplicativo android</option>
@@ -41,14 +42,14 @@
                     <option value="others">Outro..</option>
                 </select>
 
-                <label for="country">Pais</label>
+                <label for="country">Pais<i class="required">*</i></label>
                 <select id="country" name="country">
                     <option value="brazil">Brasil</option>
                     <option value="canada">Canada</option>
                     <option value="usa">USA</option>
                 </select>
 
-                <label for="message">Mensagem</label>
+                <label for="message">Mensagem<i class="required">*</i></label>
                 <textarea id="message" name="message" style="resize:none" rows="5" placeholder="Digite sua mensagem.."/>
             
                 <input type="submit" value="Enviar &nbsp ❯"/>

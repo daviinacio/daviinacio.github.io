@@ -13,6 +13,9 @@
     --warning-background: rgb(250, 226, 11);
 
     --accent-color: #1d1d1d;
+    --accent2-color: #eee;
+
+    --alert-color: #b91d1d;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
@@ -102,6 +105,10 @@ header nav li {
     margin-left: 15px;
 }
 
+#wrap {
+    transition: opacity 0.4s;
+}
+
 #wrap, main {
     width: 100%;
     height: 100%;
@@ -166,7 +173,6 @@ textarea:focus, input:focus, select {
 form {
     width: 100%;
     max-width: 600px;
-    /* background: rgba(255, 255, 255, 0.9); */
     background-color: var(--reverse-background);
     border-radius: 2px;
     padding: 20px;
@@ -202,6 +208,10 @@ form label {
     font-weight: bold;
 }
 
+form label .required {
+    color: var(--alert-color);
+}
+
 .card, input[type=submit] {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
@@ -215,27 +225,27 @@ h1 + p {
 img.avatar {
     width: 100%;
     border-radius: 50%;
-    border: 2px #eee solid;
+    border: 2px var(--accent2-color) solid;
 }
 
 img.avatar.small {
     max-width: 50px;
-    border: 1px #eee solid;
+    border: 1px var(--accent2-color) solid;
 }
 
 img.avatar.medium {
     max-width: 250px;
-    border: 2px #eee solid;
+    border: 2px var(--accent2-color) solid;
 }
 
 img.avatar.large {
     max-width: 400px;
-    border: 3px #eee solid;
+    border: 3px var(--accent2-color) solid;
 }
 
 img.avatar.xlarge {
     max-width: 750px;
-    border: 4px #eee solid;
+    border: 4px var(--accent2-color) solid;
 }
 
 /* Scroll bar style */
@@ -253,8 +263,8 @@ img.avatar.xlarge {
     background: rgba(200, 200, 200, 0.9);
 }
 
-::-moz-selection { background: rgba(25, 118, 210, 0.75); color: #fff; }
-::selection { background: rgba(25, 118, 210, 0.75); color: #fff; }
+/* ::-moz-selection { background: rgba(25, 118, 210, 0.75); color: var(--accent2-color); }
+::selection { background: rgba(25, 118, 210, 0.75); color: var(--accent2-color); } */
 
 
 /* Utils */
@@ -287,3 +297,36 @@ img.avatar.xlarge {
 #vanillatoasts-container.with-margin {
     margin-top: 50px;
 }
+
+/* Angular Animation */
+/*main.ng-enter{
+    transform: translateX(-500px);
+    opacity: 0;
+ 
+    -webkit-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -moz-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -ms-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -o-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    transition: all 0.35s cubic-bezier(1,.01,0,.99);
+}
+ 
+main.ng-enter-active{
+    transform: translateX(0px);
+    opacity: 1;
+}
+ 
+main.ng-leave{
+    transform: translateX(0);
+    opacity: 1;
+ 
+    -webkit-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -moz-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -ms-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    -o-transition: all 0.35s cubic-bezier(1,.01,0,.99);
+    transition: all 0.35s cubic-bezier(1,.01,0,.99);
+}
+ 
+main.ng-leave-active{
+    transform: translateX(500px);
+    opacity: 0;
+}*/

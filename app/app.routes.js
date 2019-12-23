@@ -14,8 +14,8 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
 			// https://carlofontanos.com/angularjs-show-route-only-after-all-ajax-requests-are-resolved/
 			// https://rafaell-lycan.com/2017/angular-tips-about-promises-and-http-service/
 
-			data: function($http, $route){
-                return $http.get('https://api.github.com/users/daviinacio').then(function(response){
+			data: ($http, $route) => {
+                return $http.get('https://api.github.com/users/daviinacio').then((response) => {
                     return response.data;
                 })
 				.catch(function(err){
@@ -24,14 +24,14 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
 						bio: "Was not possible get data from github api"
 					};
 				});
-            },
-			/*api_apps: function($http, $route){
-                return $http.get('https://api.daviapps.com/apps').then(function(response){
-                    return response.data;
+            }/*,
+            api_apps: function($http, $route){
+                return $http.get('https://api.daviapps.com/apps/5').then(function(response){
+                    response.data;
                 })
-				.catch(function(err){
-					return {};
-				});
+                .catch(function(err){
+                    return {};
+                });
             }*/
 		}
     })
@@ -41,73 +41,14 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
         controller  : 'HomeController',
     })
 
-    /*.when('/apps', {
-        templateUrl : '/app/components/apps/apps.html',
-        controller  : 'AppsController'
-    })
-
-    .when('/apps/:appId', {
-        templateUrl : '/app/components/apps/apps-detail.html',
-        controller  : 'AppsController'
-    })
-
-    .when('/apps/:appId/download', {
-        templateUrl : '/app/components/apps/apps-detail.html',
-        controller  : 'AppsController'
-    })
-
-    .when('/blog', {
-        templateUrl : '/app/components/blog/blog.html',
-        controller  : 'BlogController'
-    })
-
-    .when('/blog/:postId', {
-        templateUrl : '/app/components/blog/post.html',
-        controller  : 'BlogController'
-    })
-
-    .when('/about', {
-        templateUrl : '/app/components/about/about.html',
-        controller  : 'AboutController'
-    })
-
-    .when('/opensource', {
-        templateUrl : '/app/components/opensource/opensource.html',
-        controller  : 'OpensourceController'
-    })
-
-    .when('/opensource/:platform/:project', {
-        templateUrl : '/app/components/opensource/opensource.html',
-        controller  : 'OpensourceController'
-    })
-
-    .when('/author/:authorId', {
-        redirectTo: '/501',
-        pathMatch: ''
-    })
-
-    // Error routes
-    .when('/400', {
-        templateUrl : '/app/components/errors/error.html',
-        controller  : 'ErrorController'
-    })
-    .when('/401', {
-        templateUrl : '/app/components/errors/error.html',
-        controller  : 'ErrorController'
-    })
-    .when('/403', {
-        templateUrl : '/app/components/errors/error.html',
-        controller  : 'ErrorController'
-    })*/
     .when('/404', {
         templateUrl : '/app/components/error/404.html',
         controller  : 'ErrorController'
     })
-    /*.when('/501', {
-        templateUrl : '/app/components/errors/error.html',
-        controller  : 'ErrorController'
-    })*/
 
     // On not found route
     .otherwise({redirectTo: '/404'});
+
+    // Configure ajax loading
+    $httpProvider.interceptors.push('ajax-services');
 });

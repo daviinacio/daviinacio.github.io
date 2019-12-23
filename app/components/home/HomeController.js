@@ -1,23 +1,82 @@
-angular.module('myApp').controller('HomeController', function($scope, $location, $http, data){
+angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, data){
     $scope.user = data;
 
+    // Scroll
+   /* if(window.location.hash) {
+        var hash = window.location.hash;
+        
+        $('html, body').scrollTop = 
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 10, 'swing');
+    }*/
+    // Contact form
     const contactForm = document.querySelector('#contactForm');
 
-    /*$('#contactForm').submit(function (e) {
-        const values = $(e.target).serializeArray();
-        console.log(values);
 
+    contactForm.onsubmit = function(e){
+        // Local validation
+        const data = $(e.target).serializeArray().reduce((obj, item) => {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+
+        console.log(e.target);
+        document.tt = e.target;
+
+        // Ajax request
+        $http({
+            url: e.target.action,
+            method: e.target.method,
+            data,
+            ocult: true
+        })
+        .then(function(response) { // Success
+            console.log(response);
+            // success
+            VanillaToasts.create({
+                title: response.data.message,
+                text: 'Fique de olho na sua caixa de e-mail!<br />Que em breve eu irei entrar em contato..', 
+                type: 'success',
+                icon: '/assets/img/toast-emoji-success.png',
+                timeout: 10000,
+                // DEPRECATED
+                /*callback: function() {
+                    var inputs = document.querySelectorAll('#contactForm input[type=text], #contactForm textarea');
+                    inputs.forEach((input) => { 
+                        input.value = "";
+                    });
+                    console.log("Formulário limpo");
+                }*/
+            });
+
+            // Refresh hash value to clear the form
+            location.hash = "";
+            location.hash = "contact";
+        }, 
+        function(response) { // Error
+            const { data } = response;
+            var text = "";
+
+            Object.entries(data).forEach(([key, value]) => {
+                validation = value[0].split('.')[1];
+                    
+                if(validation == 'required')
+                    text += 'o \"' + key + '\" é obrigarório<br />';
+                else
+                    text += 'o \"' + key + '\" é inválido<br />';
+            });
+
+            VanillaToasts.create({
+                title: 'Verifique os dados inseridos!',
+                text, type: 'error',
+                icon: '/assets/img/toast-emoji-error.png',
+                timeout: 3000
+            });
+        });
         return false;
-    });*/
-
-
-    /*contactForm.onsubmit = function(e){
-
-
-
-        console.log('submit', $(e.target).serializeArray(), serialize(e.target));
-        return true;
-    }**/
+    }
 
     /*$('#contactForm').submit(function (e) {
 

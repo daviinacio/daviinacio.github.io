@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 app.run(function(){
     
@@ -34,18 +34,36 @@ app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location
     
     header.update();
 
+    $scope.$on('$routeChangeStart', function(next, current){
+        header.update();
+
+        //document.querySelector('#wrap').style.opacity = 0;
+        
+        
+        /*// Scroll
+        if(window.location.hash) {
+            var hash = window.location.hash;
+
+            console.log(hash, $(hash))
+            
+            $('html, body').attr('scrollTop', $(hash).offset().top);
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 10, 'swing');
+        }*/
+
+        //$rootScope.ajaxLoadingFlag = true;
+        //console.log('routeChangeStart', FADEOUT_DELAY);
+        //$('main').animate({ opacity: 0 }, FADEOUT_DELAY);
+        //$('footer').animate({ opacity: 0 }, FADEOUT_DELAY);
+    });
+
     $scope.$on('$routeChangeSuccess', function(next, current){
         header.update();
+        //document.querySelector('#wrap').style.opacity = 1;
+        
+        //$('main').animate({ opacity: 1 }, FADEIN_DELAY);
+        //$('footer').animate({ opacity: 1 }, FADEIN_DELAY);
     });
 });
-
-
-// TEMP
-// function updateHeaderPosition(){
-//     const header = document.querySelector('header');
-
-//     if(location.pathname !== '/')
-//         header.classList.add('top');
-//     else
-//         header.classList.remove('top');
-// }
