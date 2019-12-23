@@ -192,6 +192,10 @@ input[type=text], select, textarea {
     font-size: 16px;
 }
 
+select {
+    cursor: pointer;
+}
+
 input[type=submit] {
     border: none;
     background: var(--accent-color);
@@ -216,6 +220,10 @@ form label .required {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
+input[type=text]:disabled, select:disabled, textarea:disabled, input[type=submit]:disabled {
+    opacity: 0.5;
+    cursor: progress;
+}
 
 h1 + p {
     color: var(--foreground3);

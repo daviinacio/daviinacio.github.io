@@ -9,6 +9,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
     .when('/', {
         templateUrl : '/app/components/home/home.html',
         controller  : 'HomeController',
+        reloadOnSearch: false,
         resolve: {
 			// Learning articles
 			// https://carlofontanos.com/angularjs-show-route-only-after-all-ajax-requests-are-resolved/
@@ -39,11 +40,13 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
     .when('/projetos', {
         templateUrl : '/app/components/home/home.html',
         controller  : 'HomeController',
+        reloadOnSearch: false,
     })
 
     .when('/404', {
         templateUrl : '/app/components/error/404.html',
-        controller  : 'ErrorController'
+        controller  : 'ErrorController',
+        reloadOnSearch: false
     })
 
     // On not found route

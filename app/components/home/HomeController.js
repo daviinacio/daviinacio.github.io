@@ -22,8 +22,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             return obj;
         }, {});
 
-        console.log(e.target);
-        document.tt = e.target;
+        $('#contactForm *').prop("disabled", true);
 
         // Ajax request
         $http({
@@ -33,27 +32,22 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             ocult: true
         })
         .then(function(response) { // Success
-            console.log(response);
+            //console.log(response);
             // success
             VanillaToasts.create({
                 title: response.data.message,
                 text: 'Fique de olho na sua caixa de e-mail!<br />Que em breve eu irei entrar em contato..', 
                 type: 'success',
                 icon: '/assets/img/toast-emoji-success.png',
-                timeout: 10000,
-                // DEPRECATED
-                /*callback: function() {
-                    var inputs = document.querySelectorAll('#contactForm input[type=text], #contactForm textarea');
-                    inputs.forEach((input) => { 
-                        input.value = "";
-                    });
-                    console.log("Formulário limpo");
-                }*/
+                timeout: 10000
             });
 
-            // Refresh hash value to clear the form
-            location.hash = "";
-            location.hash = "contact";
+            // Clear input values
+            document.querySelectorAll('#contactForm input[type=text], #contactForm textarea').forEach((input) => { 
+                input.value = "";
+            });
+
+            $('#contactForm *').prop("disabled", false);
         }, 
         function(response) { // Error
             const { data } = response;
@@ -74,6 +68,8 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
                 icon: '/assets/img/toast-emoji-error.png',
                 timeout: 3000
             });
+
+            $('#contactForm *').prop("disabled", false);
         });
         return false;
     }
