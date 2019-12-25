@@ -307,12 +307,15 @@ img.avatar.xlarge {
 }
 
 /* Decorations */
-.avatar-hat {
+#avatar-christmas-hat:hover {
+  transform: translateY(-70px) translateX(35px) scaleX(1) rotate(-15deg) !important;
+}
+
+#avatar-christmas-hat {
   position: absolute;
   max-width: 180px;
-  transform: translateY(-50px) translateX(40px);
-  
-  /*background: blue*/
+  transform: translateY(-50px) translateX(35px) scaleX(1) rotate(-15deg);
+  transition: transform 0.2s;
 }
 
 /* Angular Animation */
