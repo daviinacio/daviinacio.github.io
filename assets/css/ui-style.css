@@ -306,6 +306,15 @@ img.avatar.xlarge {
     margin-top: 50px;
 }
 
+/* Decorations */
+.avatar-hat {
+  position: absolute;
+  max-width: 180px;
+  transform: translateY(-50px) translateX(40px);
+  
+  /*background: blue*/
+}
+
 /* Angular Animation */
 /*main.ng-enter{
     transform: translateX(-500px);
