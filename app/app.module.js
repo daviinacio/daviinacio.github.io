@@ -23,14 +23,19 @@ app.run(function(){
 });
 
 app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location, header){
-    VanillaToasts.create({
-        title: 'Bem-vindo ao meu site.',
-        text: 'Veja meu portifólio e/ou entre em contato pelo formulário abaixo.',
-        type: 'info', // success, info, warning, error   / optional parameter
-        icon: 'https://avatars2.githubusercontent.com/u/19656901?v=4', // optional parameter
-        timeout: 10000, // hide after 5000ms, // optional paremter
-        callback: function() {  } // executed when toast is clicked / optional parameter
-    });
+    if(localStorage.getItem('show-wellcome') !== 'false'){
+        VanillaToasts.create({
+            title: 'Bem-vindo ao meu site.',
+            text: 'Veja meu portifólio e/ou entre em contato pelo formulário abaixo.',
+            type: 'info', // success, info, warning, error   / optional parameter
+            icon: 'https://avatars2.githubusercontent.com/u/19656901?v=4', // optional parameter
+            timeout: 5000, // hide after 5000ms, // optional paremter
+            callback: function() {
+                // Disable wellcome message
+                localStorage.setItem('show-wellcome', false);
+            } // executed when toast is clicked / optional parameter
+        });
+    }
     
     header.update();
 

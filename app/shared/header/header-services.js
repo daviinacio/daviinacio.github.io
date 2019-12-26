@@ -23,11 +23,10 @@ angular.module('myApp').factory('header', function(){
     }
 
     // System events
-    window.onscroll = function() {
+    window.addEventListener('scroll', () => {
         if(scroll_enabled)
             update();
-    }
-
+    });
 
     return {
         top,

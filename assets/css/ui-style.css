@@ -16,12 +16,21 @@
     --accent2-color: #eee;
 
     --alert-color: #b91d1d;
+
+    --animation1: 0.4s;
+    --animation2: 0.7s;
+    --animation3: 1
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
     padding: 0px;
     margin: 0px;
 }
+
+html {
+    overflow-x: hidden;
+}
+
 
 html, body {
     height: 100%;
@@ -70,7 +79,7 @@ header.top {
     top: 0;
     bottom: auto;
     position: fixed;
-    background: var(--foreground);
+    background: var(--reverse-background);
     height: 50px;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
@@ -149,6 +158,12 @@ div.center {
     /* margin-top: 100%; */
 }
 
+#portifolio p {
+    text-align: justify;
+    text-indent: 10px;
+    margin-top: 5px;
+}
+
 #contact {
     background-image: url('/assets/img/bunner-notebook.jpg');
 }
@@ -163,6 +178,10 @@ div.center {
 
 div.full, section.full {
     min-height: 100%;
+}
+
+p.justify {
+    text-align: justify;
 }
 
 /* Form */
@@ -189,6 +208,7 @@ input[type=text], select, textarea {
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0);
     border-bottom: 1px solid var(--accent-color);
+    font-family: sans-serif;
     font-size: 16px;
 }
 
@@ -225,15 +245,42 @@ input[type=text]:disabled, select:disabled, textarea:disabled, input[type=submit
     cursor: progress;
 }
 
-h1 + p {
+h1 ~ p, h2 ~ p, h3 ~ p, h4 ~ p, h5 ~ p, h6 ~ p {
     color: var(--foreground3);
 }
+
+.btn-demo {
+    /* position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px; */
+    margin-top: 10px;
+    font-size: 20px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 7.5px;
+    transition: background 0.4s, color 0.4s, border-color 0.4s;
+
+    float: left;
+    width: inherit;
+}
+
+.btn-demo:hover {
+    text-decoration: none;
+    background: var(--foreground);
+    color: var(--background);
+    border-color: var(--background);
+}
+
 
 /* Image */
 img.avatar {
     width: 100%;
     border-radius: 50%;
     border: 2px var(--accent2-color) solid;
+    filter: grayscale(100%);
 }
 
 img.avatar.small {
@@ -307,15 +354,67 @@ img.avatar.xlarge {
 }
 
 /* Decorations */
-#avatar-christmas-hat:hover {
-  transform: translateY(-70px) translateX(35px) scaleX(1) rotate(-15deg) !important;
+.avatar-hat {
+    z-index: 2;
 }
 
-#avatar-christmas-hat {
+#christmas-hat.avatar-hat {
   position: absolute;
   max-width: 180px;
   transform: translateY(-50px) translateX(35px) scaleX(1) rotate(-15deg);
   transition: transform 0.2s;
+}
+
+#christmas-hat.avatar-hat:hover {
+  transform: translateY(-70px) translateX(35px) scaleX(1) rotate(-15deg) !important;
+}
+
+
+/* Animation */
+.animated-row .row {
+    margin-top: 20px;
+    transition: transform 1s, opacity 1s;
+    opacity: 0;
+}
+
+.animated-row .row.active {
+    opacity: 1;
+}
+
+.animated-row .row div {
+    padding: 5px 20px;
+}
+
+.animated-row .row div div {
+    padding: 0px;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+}
+
+.animated-row .row div img {
+    width: inherit;
+    height: inherit;
+}
+
+.animated-row .row:nth-child(odd) {
+    transform: translateX(-100%);
+    
+}
+
+.animated-row .row:nth-child(odd).active {
+    transform: translateX(0%);
+}
+
+.animated-row .row:nth-child(even) {
+    transform: scaleX(-1) translateX(-100%);
+}
+
+.animated-row .row:nth-child(even).active {
+    transform: scaleX(-1) translateX(0%);
+}
+
+.animated-row .row:nth-child(even) div {
+    transform: scaleX(-1);
 }
 
 /* Angular Animation */

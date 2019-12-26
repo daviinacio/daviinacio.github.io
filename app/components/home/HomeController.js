@@ -16,9 +16,17 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             scrollTop: $(hash).offset().top
         }, 10, 'swing');
     }*/
+
+    // Portifolio
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('#portifolio-container .row').forEach((element) => {
+            if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 3)))
+            element.classList.add('active');
+        });
+    });
+
     // Contact form
     const contactForm = document.querySelector('#contactForm');
-
 
     contactForm.onsubmit = function(e){
         // Local validation
@@ -77,7 +85,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             $('#contactForm *').prop("disabled", false);
         });
         return false;
-    }
+    };
 
     /*$('#contactForm').submit(function (e) {
 
