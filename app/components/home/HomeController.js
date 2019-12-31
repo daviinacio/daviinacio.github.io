@@ -1,21 +1,12 @@
 angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, data){
+
+    // Holidays Decoration
     const today = new Date();
 	const day = today.getDate();
 	const month = today.getMonth() + 1;
 	
 	$scope.user = data;
 	$scope.is_christmas = (month == 12 && day > 10);
-
-    // Scroll
-   /* if(window.location.hash) {
-        var hash = window.location.hash;
-        
-        $('html, body').scrollTop = 
-
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 10, 'swing');
-    }*/
 
     // Portifolio
     window.addEventListener('scroll', () => {
@@ -24,6 +15,19 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             element.classList.add('active');
         });
     });
+
+    $scope.portifolio = [
+        {
+            title: "JSnake",
+            bunner_url: "https://daviinacio.com.br/JSnake/src/assets/img/bunner2.png",
+            text: [
+                '[JSnake](https://daviinacio.com.br/JSnake) é uma réplica do cássico jogo de atari [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre)) feito totalmente em [Javascript](https://pt.wikipedia.org/wiki/JavaScript").\n\r' +
+                'A ideia inicial surgiu a partir dos videos do [FilipeDeschamps](https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw/) no youtube, onde ele mostra o passo-a-passo da construção de seu [Primeiro Jogo Multiplayer](https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer).\n\r' +
+                'Baseado em um ambiente com dimenções 15x15, o desafio foi fazer um player, que antes era um simples quadrado, ganhar corpo e se movimentar pelo mapa.'
+            ],
+            demo_url: "https://daviinacio.com.br/JSnake"
+        }
+    ];
 
     // Contact form
     const contactForm = document.querySelector('#contactForm');
