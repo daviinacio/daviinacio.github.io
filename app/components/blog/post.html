@@ -1,5 +1,12 @@
 <section class="full">
-    <div class="container middle">
-        <h1>Post</h1>
+    <div class="container">
+        <div class="blog-post">
+            <div class="header">
+                <h1>{{ data.title }}</h1>
+                <h2>{{ data.subtitle }}</h2>
+            </div>
+
+            <div class="body" marked="data.body"></div>
+        </div>
     </div>
 </section>
