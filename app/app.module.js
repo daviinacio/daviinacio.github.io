@@ -23,6 +23,8 @@ app.run(function(){
 });
 
 app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location, header){
+    //$('html, body').
+
     if(localStorage.getItem('show-wellcome') !== 'false'){
         VanillaToasts.create({
             title: 'Bem-vindo ao meu site.',

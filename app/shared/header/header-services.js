@@ -22,6 +22,14 @@ angular.module('myApp').factory('header', function(){
             top();
     }
 
+    function hide(){
+        header.classList.add('hidden');
+    }
+
+    function show(){
+        header.classList.remove('hidden');
+    }
+
     // System events
     window.addEventListener('scroll', () => {
         if(scroll_enabled)
@@ -31,6 +39,8 @@ angular.module('myApp').factory('header', function(){
     return {
         top,
         bottom,
-        update
+        update,
+        hide,
+        show
     }
 });

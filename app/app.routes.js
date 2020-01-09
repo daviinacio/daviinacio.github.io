@@ -36,21 +36,63 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
             }*/
 		}
     })
-
+    .when('/blog', {
+        templateUrl : '/app/components/blog/blog.html',
+        controller  : 'BlogController',
+        reloadOnSearch: false,
+        resolve: {
+			data: function($http, $route){
+                return $http.get('https://api.daviapps.com/posts').then((response) => {
+                    return response.data;
+                })
+                .catch((err) => {
+                    return {};
+                });
+            }
+		}
+    })
+    .when('/blog/:post', {
+        templateUrl : '/app/components/blog/post.html',
+        controller  : 'BlogController',
+        reloadOnSearch: false,
+        resolve: {
+			data: function($http, $route){
+                return $http.get('https://api.daviapps.com/posts/' + $route.current.params.post).then((response) => {
+                    return response.data;
+                })
+                .catch((err) => {
+                    return {};
+                });
+            }
+		}
+    })
+    .when('/b/:post', {
+        templateUrl : '/app/components/blog/post.html',
+        controller  : 'BlogController',
+        reloadOnSearch: false,
+        resolve: {
+			data: function($http, $route){
+                return $http.get('https://api.daviapps.com/posts/' + $route.current.params.post).then((response) => {
+                    return response.data;
+                })
+                .catch((err) => {
+                    return {};
+                });
+            }
+		}
+    })
     .when('/projetos', {
         templateUrl : '/app/components/home/home.html',
         controller  : 'HomeController',
         reloadOnSearch: false,
     })
-
     .when('/404', {
         templateUrl : '/app/components/error/404.html',
         controller  : 'ErrorController',
         reloadOnSearch: false
     })
-
     // On not found route
-    .otherwise({redirectTo: '/404'});
+    .otherwise({ redirectTo: '/404' });
 
     // Configure ajax loading
     $httpProvider.interceptors.push('ajax-services');

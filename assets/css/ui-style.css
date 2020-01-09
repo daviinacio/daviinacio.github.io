@@ -33,6 +33,9 @@ html {
 
 
 html, body {
+    /* opacity: 0;
+    transition: opacity 0.4s; */
+    
     height: 100%;
     background: var(--background);
     color: var(--foreground);
@@ -66,7 +69,7 @@ header {
     bottom: 0px;
     width: 100%;
     background: rgba(29, 29, 29, 0.25);
-    transition: background 1s, height 0.4s;
+    transition: background 0.5s, height 0.4s, opacity 0.4;
     height: 50px;
     z-index: 50;
 }
@@ -323,6 +326,9 @@ img.avatar.xlarge {
 
 
 /* Utils */
+.hidden {
+    opacity: 0;
+}
 
 .warning-text {
     font-size: 30px;
