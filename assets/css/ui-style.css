@@ -248,7 +248,8 @@ input[type=text]:disabled, select:disabled, textarea:disabled, input[type=submit
     cursor: progress;
 }
 
-h1 ~ p, h2 ~ p, h3 ~ p, h4 ~ p, h5 ~ p, h6 ~ p {
+h1 ~ p, h2 ~ p, h3 ~ p, h4 ~ p, h5 ~ p, h6 ~ p,
+h2 ~ div p {
     color: var(--foreground3);
 }
 
@@ -378,7 +379,7 @@ img.avatar.xlarge {
 
 /* Animation */
 .animated-row .row {
-    margin-top: 20px;
+    margin-top: 40px;
     transition: transform 1s, opacity 1s;
     opacity: 0;
 }
@@ -394,7 +395,7 @@ img.avatar.xlarge {
 .animated-row .row div div {
     padding: 0px;
     height: calc(100% - 50px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .animated-row .row div img {
@@ -404,7 +405,6 @@ img.avatar.xlarge {
 
 .animated-row .row:nth-child(odd) {
     transform: translateX(-100%);
-    
 }
 
 .animated-row .row:nth-child(odd).active {
@@ -421,6 +421,10 @@ img.avatar.xlarge {
 
 .animated-row .row:nth-child(even) div {
     transform: scaleX(-1);
+}
+
+.animated-row .row:nth-child(even) div div {
+    transform: scaleX(1);
 }
 
 /* Angular Animation */

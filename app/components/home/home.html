@@ -16,78 +16,21 @@
     <div class="container">
         <h1>Portifólio</h1>
 
-        <!-- <div class="middle full">
-            <div class="warning-text">Em desenvolvimento!!</div>
-        </div> -->
-
         <div id="portifolio-container" class="animated-row">
-            <div class="row">
+            <div class="row" ng-repeat="project in portifolio">
                 <div class="col-sm-12 col-md-6 col-lg-7">
-                    <div>
-                        <h2>JSnake</h2>
-                        <p>
-                            <a href="https://daviinacio.com.br/JSnake">JSnake</a> é uma réplica do cássico jogo de atari <a href="https://en.wikipedia.org/wiki/Snake_(video_game_genre)" target="_black">Snake</a> feito totalmente em <a href="https://pt.wikipedia.org/wiki/JavaScript" target="_black">Javascript</a>.
-                        </p>
 
-                        <p>
-                            A ideia inicial surgiu a partir dos videos do <a href="https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw/">FilipeDeschamps</a> no youtube, onde ele mostra o passo-a-passo da construção de seu <a href="https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer">Primeiro Jogo Multiplayer</a>.
-                        </p>
+                    <h2>{{ project.title }}</h2>
 
-                        <p>
-                            Baseando em um ambiente com dimenções 15x15, o desafio foi fazer um player, que antes era um simples quadrado, ganhar corpo e se movimentar pelo mapa.
-                        </p>
-                    </div>
+                    <div marked="project.text"></div>
 
-                    <a class="btn-demo" href="https://daviinacio.com.br/JSnake" target="_black">Demostração</a>
+                    <a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-5"">
-                    <img src="https://daviinacio.com.br/JSnake/src/assets/img/bunner2.png" />
+
+                <div class="col-sm-12 col-md-6 col-lg-5">
+                    <img src="{{ project.bunner_url }}" />
                 </div>
             </div>
-
-            <!-- <div class="row">
-                <div class="col-sm-12 col-md-6" style="background-color: blue;">
-                    <h2>title2</h2>
-                </div>
-                <div class="col-sm-12 col-md-6" style="background-color: orange; min-height: 200px;">
-                    <h2>Content2</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-6" style="background-color: purple;">
-                    <h2>title3</h2>
-                </div>
-                <div class="col-sm-12 col-md-6" style="background-color: cyan; min-height: 200px;">
-                    <h2>Content3</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6" style="background-color: red;">
-                    <h2>title4</h2>
-                </div>
-                <div class="col-sm-12 col-md-6" style="background-color: green; min-height: 200px;">
-                    <h2>Content4</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-6" style="background-color: blue;">
-                    <h2>title5</h2>
-                </div>
-                <div class="col-sm-12 col-md-6" style="background-color: orange; min-height: 200px;">
-                    <h2>Content5</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-6" style="background-color: purple;">
-                    <h2>title6</h2>
-                </div>
-                <div class="col-sm-12 col-md-6" style="background-color: cyan; min-height: 200px;">
-                    <h2>Content6</h2>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>

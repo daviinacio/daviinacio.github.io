@@ -1,4 +1,16 @@
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('myApp', ['ngRoute', 'ngAnimate', 'hc.marked']);
+
+app.config(['markedProvider', function (markedProvider) {
+    markedProvider.setOptions({ gfm: true });
+}]);
+
+app.config(['markedProvider', function (markedProvider) {
+    markedProvider.setRenderer({
+        link: function(href, title, text) {
+            return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
+        }
+    });
+}]);
 
 app.run(function(){
     
