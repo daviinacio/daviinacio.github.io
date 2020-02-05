@@ -16,20 +16,24 @@
         <h1>Portifólio</h1>
 
         <div id="portifolio-container" class="animated-row">
-            <div class="row" ng-repeat="project in portifolio">
+            <div class="row project" ng-repeat="project in portifolio">
                 <div class="col-sm-12 col-md-6 col-lg-7">
-
                     <h2>{{ project.title }}</h2>
-
+					<div class="techs" ng-if="project.tecnologies">
+						<span ng-repeat="tech in project.tecnologies">{{ tech }}</span>
+					</div>
                     <div class="text" marked="project.text"></div>
 
                     <!--a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a-->
                 </div>
 
-                <a class="col-sm-12 col-md-6 col-lg-5" ng-class="project.demo_url ? 'btn-overlay' : '' " href="{{ project.demo_url }}" target="_black" >
+                <a class="col-sm-12 col-md-6 col-lg-5" ng-class="project.demo_url || project.doc_url ? 'btn-overlay' : '' " href="{{ project.demo_url+project.doc_url }}" target="_black" >
 					<img src="{{ project.bunner_url }}"/>
-                    <div class="middle" ng-if="project.demo_url">
-						<span class="btn-demo">
+                    <div class="middle" ng-if="project.demo_url || project.doc_url">
+						<span class="btn-demo" ng-if="project.demo_url">
+							Demostração
+						</span>
+						<span class="btn-demo" ng-if="project.doc_url">
 							Demostração
 						</span>
 					</div>
