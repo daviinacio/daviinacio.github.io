@@ -25,7 +25,26 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
                 'A ideia inicial surgiu a partir dos videos do [FilipeDeschamps](https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw/) no youtube, onde ele mostra o passo-a-passo da construção de seu [Primeiro Jogo Multiplayer](https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer).\n\r' +
                 'Baseado em um ambiente com dimenções 15x15, o desafio foi fazer um player, que antes era um simples quadrado, ganhar corpo e se movimentar pelo mapa.'
             ],
-            demo_url: "https://daviinacio.com.br/JSnake/"
+            demo_url: "https://daviinacio.com.br/JSnake/",
+			tecnologies: [
+				'JavaScript', 'HTML', 'CSS'
+			]
+        },
+		{
+            title: "White Led Digital Clock",
+            bunner_url: "https://daviinacio.com.br/white_led_digital_clock/hardware/photos/20190112_202421_Burst01-1.jpg",
+            text: [
+                '[White Led Digital Clock](https://daviinacio.com.br/white_led_digital_clock/) é um relógio digital construido com [Led SMD](), Difusor de TV LCD, Papelão e  outros componentes.\n' +
+				'## Funcionalidades\n' +
+				'- Mostra a hora atual\n' +
+				'- Mostra a média da temperatura e humidade\n' +
+				'- Brilho automatico do display\n' +
+				'- Controle via Infra vermelho'
+            ],
+            doc_url: "https://daviinacio.com.br/white_led_digital_clock/",
+			tecnologies: [
+				'Arduino', 'C++', 'Eletrônica Analógica e Digital'
+			]
         }
     ];
 

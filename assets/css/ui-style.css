@@ -63,7 +63,7 @@ h1 a, h2 a, h3 a {
     text-decoration: none !important;
 }
 
-nav li {
+nav > li {
     list-style: none;
 }
 
@@ -179,11 +179,25 @@ div.center {
     text-align: justify;
 }
 
+.text p, li {
+	color: var(--foreground3);
+}
+
 .text p {
     text-align: justify;
     text-indent: 20px;
     font-size: 16px;
     margin-top: 10px;
+}
+
+.text ul li {
+	
+}
+
+.text h2 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-size: 18px;
 }
 
 /* Sections */
@@ -316,6 +330,7 @@ div[marked] p {
 
 .btn-overlay img {
 	transition: opacity 0.4s;
+	border: 2px solid var(--foreground);
 }
 
 .btn-overlay:hover img {
@@ -362,6 +377,23 @@ div[marked] p {
 #portifolio-container {
 	max-width: var(--sub-container-max-width2);
 	margin: auto;
+}
+
+.project {
+	margin-bottom: 25px;
+}
+
+.project .techs span {
+	background: var(--reverse-background);
+	color: var(--reverse-foreground);
+	font-weight: 600;
+	font-size: 14px;
+	padding: 2.5px 7.5px;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	cursor: pointer;
 }
 
 /* Image */
