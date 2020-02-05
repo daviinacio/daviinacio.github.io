@@ -1,5 +1,4 @@
-<section id="overview" class="full">
-    <div class="black-overlay"></div>
+<section id="overview" class="full black-overlay">
     <div class="container middle">
         <div class="center">
             <a href="{{ user.blog }}" target="_blank">
@@ -24,19 +23,23 @@
 
                     <div class="text" marked="project.text"></div>
 
-                    <a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a>
+                    <!--a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a-->
                 </div>
 
-                <div class="col-sm-12 col-md-6 col-lg-5">
-                    <img src="{{ project.bunner_url }}" />
-                </div>
+                <a class="col-sm-12 col-md-6 col-lg-5" ng-class="project.demo_url ? 'btn-overlay' : '' " href="{{ project.demo_url }}" target="_black" >
+					<img src="{{ project.bunner_url }}"/>
+                    <div class="middle" ng-if="project.demo_url">
+						<span class="btn-demo">
+							Demostração
+						</span>
+					</div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="full">
-    <div class="black-overlay"></div>
+<section id="contact" class="full black-overlay">
     <div class="container">
         <h1 class="center">Contato</h1>
         <div class="middle full">
@@ -59,8 +62,8 @@
                 <label for="country">Pais<i class="required">*</i></label>
                 <select id="country" name="country">
                     <option value="brazil">Brasil</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
+                    <!--option value="canada">Canada</option>
+                    <option value="usa">USA</option-->
                 </select>
 
                 <label for="message">Mensagem<i class="required">*</i></label>

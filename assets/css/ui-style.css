@@ -19,7 +19,10 @@
 
     --animation1: 0.4s;
     --animation2: 0.7s;
-    --animation3: 1
+    --animation3: 1;
+	
+	--sub-container-max-width: 600px;
+	--sub-container-max-width2: 900px;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
@@ -196,12 +199,9 @@ div.center {
     background-image: url('/assets/img/bunner-notebook.jpg');
 }
 
-.black-overlay {
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 1px);
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+section.black-overlay {
+	box-shadow: 
+	inset 0 0 0 100vh rgba(0, 0, 0, 0.5);
 }
 
 div.full, section.full {
@@ -219,7 +219,7 @@ textarea:focus, input:focus, select {
 
 form {
     width: 100%;
-    max-width: 600px;
+    max-width: var(--sub-container-max-width);
     background-color: var(--reverse-background);
     border-radius: 2px;
     padding: 20px;
@@ -278,11 +278,7 @@ div[marked] p {
     color: var(--foreground3);
 }
 
-.btn-demo {
-    /* position: absolute;
-    bottom: 10px;
-    left: 20px;
-    right: 20px; */
+/*.btn-demo {
     margin-top: 10px;
     font-size: 20px;
     border: 1px solid white;
@@ -294,6 +290,66 @@ div[marked] p {
 
     float: left;
     width: inherit;
+}*/
+
+/*.image {
+    position:relative;
+}
+.image img {
+    width:100%;
+    width:400px;
+    height:400px;
+}
+.image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.image:hover:after {
+    opacity:1;
+}*/
+
+.btn-overlay img {
+	transition: opacity 0.4s;
+}
+
+.btn-overlay:hover img {
+	opacity: 0.2;
+}
+
+.btn-overlay .middle {
+	position: absolute;
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.btn-overlay a.btn-demo {
+	position: absolute;
+	/*bottom: 10%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 10px;*/
+}
+
+.btn-demo {
+	font-size: 22px;
+	font-weight: 600;
+	border: 1px solid white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	opacity: 0;
+}
+
+*:hover > .btn-demo {
+    opacity: 1;
 }
 
 .btn-demo:hover {
@@ -303,6 +359,10 @@ div[marked] p {
     border-color: var(--background);
 }
 
+#portifolio-container {
+	max-width: var(--sub-container-max-width2);
+	margin: auto;
+}
 
 /* Image */
 img.avatar {
@@ -419,11 +479,14 @@ img.avatar.xlarge {
 
 .animated-row .row div div {
     padding: 0px;
-    height: calc(100% - 50px);
     overflow-y: auto;
 }
 
-.animated-row .row div img {
+.animated-row > .row > *:last-child {
+	position: relative;
+}
+
+.animated-row > .row > *:last-child img {
     width: inherit;
     height: inherit;
 }
@@ -444,13 +507,35 @@ img.avatar.xlarge {
     transform: scaleX(-1) translateX(0%);
 }
 
-.animated-row .row:nth-child(even) div {
+.animated-row .row:nth-child(even) > * {
     transform: scaleX(-1);
 }
 
-.animated-row .row:nth-child(even) div div {
+.animated-row .row:nth-child(even) > * > div {
     transform: scaleX(1);
 }
+
+/* ----------------------------- Debug ------------------------------------- */
+.debug.yf { min-height: 100vh; }
+.debug.xf { min-width: 100vh; }
+
+.debug.yh { min-height: 50vh; }
+.debug.xh { min-width: 50vh; }
+
+.debug.y1 { min-height: 100px; }
+.debug.x1 { min-width: 100px; }
+
+.debug.y2 { min-height: 200px; }
+.debug.x2 { min-width: 200px; }
+
+.debug.d1 { background: red; }
+.debug.d2 { background: green; }
+.debug.d3 { background: blue; }
+.debug.d4 { background: cyan; }
+.debug.d5 { background: orange; }
+.debug.d6 { background: purple; }
+.debug.d7 { background: yellow; }
+
 
 /* Angular Animation */
 /*main.ng-enter{
