@@ -32,7 +32,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
         },
 		{
             title: "White Led Digital Clock",
-            bunner_url: "https://daviinacio.com.br/white_led_digital_clock/hardware/photos/20190112_202421_Burst01-1.jpg",
+            bunner_url: "https://daviinacio.com.br/white_led_digital_clock/hardware/photos/20190105_220150-1.jpg",
             text: [
                 '[White Led Digital Clock](https://daviinacio.com.br/white_led_digital_clock/) é um relógio digital construido com [Led SMD](), Difusor de TV LCD, Papelão e  outros componentes.\n' +
 				'## Funcionalidades\n' +
