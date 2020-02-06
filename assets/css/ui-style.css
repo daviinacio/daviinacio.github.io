@@ -145,6 +145,10 @@ main section .container {
     z-index: 20;
 }
 
+main section .container.middle {
+	padding-top: 0;
+}
+
 div.middle {
     display: flex;
     justify-content: center;
@@ -203,6 +207,11 @@ div.center {
 /* Sections */
 #overview {
     background-image: url('/assets/img/bunner-python.jpg');
+}
+
+#overview .center {
+	width: 100%;
+    max-width: 350px;
 }
 
 #portifolio {
@@ -545,6 +554,33 @@ img.avatar.xlarge {
 
 .animated-row .row:nth-child(even) > * > div {
     transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+.social-medias {
+	margin-top: 20px;
+	display: flex;
+}
+
+.social-medias > * {
+	display: inline-block;
+	color: var(--foreground);
+	text-align: center;
+	font-weight: 600;
+	flex: 1;
+}
+
+.social-medias > * > img {
+	width: 50px;
+	display: block;
+	margin: auto;
+	margin-bottom: 5px;
 }
 
 /* ----------------------------- Debug ------------------------------------- */
