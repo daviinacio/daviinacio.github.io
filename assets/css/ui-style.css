@@ -194,9 +194,21 @@ div.center {
     margin-top: 10px;
 }
 
-.text ul li {
+.text ul {
 	
 }
+
+.text ul li {
+	margin-left: 20px;
+}
+
+.text ul li p {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: initial;
+	text-indent: 0;
+}
+
 
 .text h2 {
 	margin-top: 10px;
@@ -530,6 +542,8 @@ img.avatar.xlarge {
 .animated-row > .row > *:last-child img {
     width: inherit;
     height: inherit;
+	max-height: 400px;
+    object-fit: cover;
 }
 
 .animated-row .row:nth-child(odd) {
