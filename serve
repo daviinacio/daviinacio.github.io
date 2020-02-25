@@ -1,1 +1,30 @@
-php -S 0.0.0.0:3000 -f .
+#!/bin/bash
+# 				Localhost PHP Server
+# version: 1.1
+# author: davinacio
+# description: localhost server for development
+
+if [ "$1" == "" ]; then
+	echo "running on background -> 0.0.0.0:3000"
+	#( php -S 0.0.0.0:3000 -f . &> /dev/null & )
+	#php -S 0.0.0.0:3000 -f . &
+	bash serve -w . &> /dev/null &
+
+elif [ "$1" == "--watch" ] || [ "$1" == "-w" ]; then
+	echo "localhost server at 0.0.0.0:3000"
+	php -S 0.0.0.0:3000 -f .
+
+elif [ "$1" == "--kill" ] || [ "$1" == "-k" ]; then
+	echo "TODO: Implement this command"
+
+elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+        echo "The server will be at background by default"
+	echo ""
+	echo "  -w, --watch          Start serve on foreground"
+	echo "  -h, --help           Show help"
+
+else
+	echo "serve: command not found"
+	echo "Try '--help' or '-h' for more information."
+
+fi
