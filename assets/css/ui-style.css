@@ -401,7 +401,11 @@ div[marked] p {
 }
 
 .project {
-	margin-bottom: 25px;
+	margin-bottom: 150px;
+}
+
+.project:last-child {
+	margin-bottom: 50px;
 }
 
 .project .techs span {
@@ -519,7 +523,7 @@ img.avatar.xlarge {
 .animated-row .row {
     margin-top: 40px;
     transition: transform 1s, opacity 1s;
-    opacity: 0;
+    opacity: 0.1;
 }
 
 .animated-row .row.active {
@@ -547,7 +551,7 @@ img.avatar.xlarge {
 }
 
 .animated-row .row:nth-child(odd) {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
 }
 
 .animated-row .row:nth-child(odd).active {
@@ -555,7 +559,7 @@ img.avatar.xlarge {
 }
 
 .animated-row .row:nth-child(even) {
-    transform: scaleX(-1) translateX(-100%);
+    transform: scaleX(-1) translateX(-50%);
 }
 
 .animated-row .row:nth-child(even).active {
