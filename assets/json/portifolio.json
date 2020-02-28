@@ -29,6 +29,16 @@
         ]
     },
     {
+        "title": "College Size Fix",
+        "icon": "https://daviinacio.com.br/college_size_fix/icon.png",
+        "text": [
+            "Uma ferramenta que permite mudar facilmente o tamanho do coteúdo de sistemas EAD e, facilizar a leitura.",
+            "Algumas faculdades ainda disponibilizam seus conteúdos em flash. Muitas vezes, esses conteúdos não se adaptão corretamente aos monitores, dificultando significativamente a leitura, e provoca cansaço nos olhos..",
+            "Então.. Aqui está a solução! :)"
+        ],
+        "doc_url": "https://daviinacio.com.br/college_size_fix/pt-BR/"
+    },
+    {
         "title": "Desenvolvendo Desenvolvedores",
         "bunner_url": "https://daviinacio.com.br/desenvolvendo-desenvolvedores/thumb/logica_programacao.png",
         "text": [

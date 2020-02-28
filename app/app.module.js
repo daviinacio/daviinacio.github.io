@@ -21,8 +21,8 @@ app.run(function(){
     }
 
     console.log("Run");
-
-	$(document).contextmenu(function(){
+    
+    document.addEventListener('contextmenu', function(event) {
         if(location.host.includes('gitpod') || location.host.includes('localhost')){
             console.info("Context menu allowd on development mode");
 		    return true;
@@ -31,7 +31,7 @@ app.run(function(){
             console.info("Context menu canceled");
 		    return false;
         }
-	});
+    }, true);
 });
 
 app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location, header){

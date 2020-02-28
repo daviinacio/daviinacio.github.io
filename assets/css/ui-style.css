@@ -351,7 +351,6 @@ div[marked] p {
 
 .btn-overlay img {
 	transition: opacity 0.4s;
-	border: 2px solid var(--foreground);
 }
 
 .btn-overlay:hover img {
@@ -361,9 +360,12 @@ div[marked] p {
 .btn-overlay .middle {
 	position: absolute;
 	top: 0;
-    left: 0;
+    left: 15px;
     bottom: 0;
     right: 0;
+    
+    width: calc(100% - 30px);
+    border: 2px solid var(--foreground);
 }
 
 .btn-overlay a.btn-demo {
@@ -406,6 +408,19 @@ div[marked] p {
 
 .project:last-child {
 	margin-bottom: 50px;
+}
+
+.project > a {
+    display: flex;
+}
+
+.project .icon {
+    align-items: center;
+    justify-content: center;
+}
+
+.project .icon > img {
+    image-rendering: pixelated;
 }
 
 .project .techs span {
@@ -546,7 +561,6 @@ img.avatar.xlarge {
 .animated-row > .row > *:last-child img {
     width: inherit;
     height: inherit;
-	max-height: 400px;
     object-fit: cover;
 }
 
@@ -622,6 +636,17 @@ img.avatar.xlarge {
 .debug.d6 { background: purple; }
 .debug.d7 { background: yellow; }
 
+/* -------------------------------- Mobile --------------------------------- */
+@media (min-width: 768px) {
+    .animated-row > .row > * {
+        max-height: 400px;
+    }
+    
+    .project .icon > img {
+        max-width: 256px;
+        max-height: 256px;
+    }
+}
 
 /* Angular Animation */
 /*main.ng-enter{

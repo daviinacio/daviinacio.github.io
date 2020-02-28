@@ -33,8 +33,8 @@
                     <!--a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a-->
                 </div>
 
-                <a class="col-sm-12 col-md-6 col-lg-5" ng-class="project.demo_url || project.doc_url ? 'btn-overlay' : '' " href="{{ project.demo_url+project.doc_url }}" target="_black" >
-					<img src="{{ project.bunner_url ? project.bunner_url : '/assets/img/no-image-16x9.png' }}"/>
+                <a class="col-sm-12 col-md-6 col-lg-5 btn-overlay" ng-class="project.icon ? 'icon' : ''" href="{{ project.demo_url+project.doc_url }}" target="_black" >
+					<img src="{{ project.bunner_url ? project.bunner_url : ( project.icon ? project.icon : '/assets/img/no-image-16x9.png' ) }}"/>
                     <div class="middle" ng-if="project.demo_url || project.doc_url">
 						<span class="btn-demo" ng-if="project.demo_url">
 							Demostração
