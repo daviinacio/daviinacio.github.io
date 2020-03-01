@@ -13,7 +13,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
     
     window.addEventListener('scroll', () => {
         document.querySelectorAll('#portifolio-container .row').forEach((element) => {
-            if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 3)))
+            if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 4)))
             element.classList.add('active');
         });
     });
