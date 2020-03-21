@@ -21,7 +21,7 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
         echo "The server will be at background by default"
 	echo ""
 	echo "  -w, --watch          Start serve on foreground"
-	echo "  -h, --help           Show help"
+	echo "  -h, --help           This help"
 
 else
 	echo "serve: command not found"

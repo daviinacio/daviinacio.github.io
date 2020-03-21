@@ -467,6 +467,7 @@ img.avatar.xlarge {
 /* Scroll bar style */
 ::-webkit-scrollbar {
     width: 5px;
+    background-color: rgba(255, 255, 255, 0.075);
 }
 
 ::-webkit-scrollbar-track {
@@ -589,9 +590,19 @@ img.avatar.xlarge {
 }
 
 
+@media (max-width: 768px) {
+    .animated-row .row {
+        opacity: 0;
+    }
 
+    .animated-row .row:nth-child(odd) {
+        transform: translateX(0%);
+    }
 
-
+    .animated-row .row:nth-child(even) {
+        transform: scaleX(-1) translateX(0%);
+    }
+}
 
 
 
@@ -640,6 +651,10 @@ img.avatar.xlarge {
 @media (min-width: 768px) {
     .animated-row > .row > * {
         max-height: 400px;
+    }
+
+    .project {
+        /*transform: translateX(0%) !important;*/
     }
     
     .project .icon > img {
