@@ -12,8 +12,10 @@
     --warning-foreground: #000;
     --warning-background: rgb(250, 226, 11);
 
-    --accent-color: #1d1d1d;
+    --accent-color: #fff;
     --accent2-color: #eee;
+
+    --reverse-accent-color: #1d1d1d;
 
     --alert-color: #b91d1d;
 
@@ -270,7 +272,7 @@ input[type=text], select, textarea {
     border: none;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0);
-    border-bottom: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--reverse-accent-color);
     font-family: sans-serif;
     font-size: 16px;
 }
@@ -281,7 +283,7 @@ select {
 
 input[type=submit] {
     border: none;
-    background: var(--accent-color);
+    background: var(--reverse-accent-color);
     color: var(--foreground);
     padding: 10px 20px;
     text-align: center;
@@ -625,6 +627,27 @@ img.avatar.xlarge {
 	margin: auto;
 	margin-bottom: 5px;
 }
+
+/* ------------------------- Text Selection ---------------------------------*/
+
+*::selection {
+    background: var(--accent-color);
+    color: var(--background);
+}
+
+form *::selection {
+    background: var(--reverse-accent-color);
+    color: var(--reverse-background);
+}
+
+* {
+    user-select: none;
+}
+
+.text, .text *, p, p * {
+    user-select: text;
+}
+
 
 /* ----------------------------- Debug ------------------------------------- */
 .debug.yf { min-height: 100vh; }
