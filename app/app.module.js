@@ -7,7 +7,7 @@ app.config(['markedProvider', function (markedProvider) {
 app.config(['markedProvider', function (markedProvider) {
     markedProvider.setRenderer({
         link: function(href, title, text) {
-            return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank'>" + text + "</a>";
+            return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " target='_blank' rel='noreferrer'>" + text + "</a>";
         }
     });
 }]);

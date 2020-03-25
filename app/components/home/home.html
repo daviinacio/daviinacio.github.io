@@ -1,7 +1,7 @@
 <section id="overview" class="full black-overlay">
     <div class="container middle">
         <div class="center">
-            <a href="{{ user.blog }}" target="_blank">
+            <a href="{{ user.blog }}" target="_blank" rel="noreferrer">
 			    <img id="christmas-hat" class="avatar-hat" src="/assets/img/christmas-hat-1.png" ng-if="is_christmas" />
                 <img class="avatar medium" src="{{ user.avatar_url }}" alt="daviinacio" />
             </a>
@@ -9,9 +9,9 @@
             <p>{{ user.bio }}</p>
 			
 			<div class="social-medias">
-				<a href="https://twitter.com/daviinacio__" target="_black"><img src="/assets/svg/twitter.svg" />Twitter</a>
-				<a href="https://github.com/daviinacio" target="_black"><img src="/assets/svg/github.svg" />Github</a>
-				<a href="https://linkedin.com/in/daviinacio" target="_black"><img src="/assets/svg/linkedin.svg" />Linkedin</a>
+				<a href="https://twitter.com/daviinacio__" target="_black" rel="noreferrer"><img src="/assets/svg/twitter.svg" />Twitter</a>
+				<a href="https://github.com/daviinacio" target="_black" rel="noreferrer"><img src="/assets/svg/github.svg" />Github</a>
+				<a href="https://linkedin.com/in/daviinacio" target="_black" rel="noreferrer"><img src="/assets/svg/linkedin.svg" />Linkedin</a>
 			</div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                     <!--a class="btn-demo" href="{{ project.demo_url }}" target="_black">Demostração</a-->
                 </div>
 
-                <a class="col-sm-12 col-md-6 col-lg-5 btn-overlay" ng-class="project.icon ? 'icon' : ''" href="{{ project.demo_url+project.doc_url }}" target="_black" >
+                <a class="col-sm-12 col-md-6 col-lg-5 btn-overlay" ng-class="project.icon ? 'icon' : ''" href="{{ project.demo_url+project.doc_url }}" target="_black" rel="noreferrer">
 					<img src="{{ project.bunner_url ? project.bunner_url : ( project.icon ? project.icon : '/assets/img/no-image-16x9.png' ) }}"/>
                     <div class="middle" ng-if="project.demo_url || project.doc_url">
 						<span class="btn-demo" ng-if="project.demo_url">
