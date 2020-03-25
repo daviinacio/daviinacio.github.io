@@ -12,8 +12,7 @@ app.config(['markedProvider', function (markedProvider) {
     });
 }]);
 
-app.run(function(){
-    
+app.run(function(){    
     // Console alert
     if(window.console || "console" in window) {
         console.log("%c DaviApps", "color:darkcyan; font-size:50px;");
@@ -54,6 +53,16 @@ app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location
     header.update();
 
     $scope.$on('$routeChangeStart', function(next, current){
+        const reditectTo = {
+            "/tindev": "/Omnistack8"
+        };
+
+        Object.keys(reditectTo).forEach((key) => {
+            if(location.pathname === key)
+                location.pathname = reditectTo[key];
+        });
+
+
         header.update();
 
         //document.querySelector('#wrap').style.opacity = 0;
