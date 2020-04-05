@@ -86,7 +86,7 @@
     },
     {
         "title": "Arduino Buffer",
-            "bunner_url": "/assets/img/arduino-3-16x9.png",
+        "bunner_url": "/assets/img/arduino-3-16x9.png",
         "text": [
             "Essa biblioteca é compativel com a arquitetura [Arduino](https://arduino.cc), e possibilita implementar, incrementar e obter médias de buffers.",
             "Ideal para obter média de leitura de sensores.",
@@ -100,6 +100,7 @@
     },
 	{
         "title": "JC Mecânica",
+        "bunner_url": "https://raw.githubusercontent.com/daviapps/JC_Mecanica/master/Pictures/bunner.png",
         "text": [
             "Programa de cadastro para a oficina mecânica do josé carlos."
         ],
