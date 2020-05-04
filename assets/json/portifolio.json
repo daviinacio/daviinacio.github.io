@@ -1,13 +1,25 @@
 [
     {
+        "title": "Be The Hero",
+        "bunner_url": "https://daviinacio.com.br/be-the-hero/bunner_1440.png",
+        "text": [
+            "Projeto desenvolvido na Semana Omnistack11, promovido pela [RocketSeat](https://rocketseat.com.br/)",
+            "Consiste em uma plataforma na qual ONGs podem mostrar Casos que precisam de doação para que doadores possam colaborar"
+        ],
+        "demo_url": "https://daviinacio.com.br/be-the-hero",
+        "tecnologies": [
+          "Node.js", "React", "React Native", "Express", "SQlite3", "MySql"
+        ]
+    },
+    {
         "title": "Tindev",
-        "bunner_url": "https://daviinacio.com.br/Omnistack8/bunner.png",
+        "bunner_url": "https://daviinacio.com.br/tindev/bunner.png",
         "text": [
             "Projeto desenvolvido na Semana Omnistack8, promovido pela [RocketSeat](https://rocketseat.com.br/)",
             "Consiste em uma réplica do famoso app de relacionamento 'Tinder', mas voltado para desenvolvedores",
             "Utilizando o ecossistema Node, desde o **Backend**, até o **Frontend** e **Mobile**"
         ],
-        "demo_url": "https://daviinacio.com.br/Omnistack8",
+        "demo_url": "https://daviinacio.com.br/tindev",
         "tecnologies": [
             "Node.js", "React", "React Native", "Express", "MongoDB", "Socket.io"
         ]
