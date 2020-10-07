@@ -1,4 +1,4 @@
-angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, profile, portifolio){
+angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, profile, portfolio){
 
     // Holidays Decoration
     const today = new Date();
@@ -8,24 +8,24 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
 	$scope.user = profile;
 	$scope.is_christmas = (month == 12 && day > 10);
 
-    // Portifolio
-    $scope.portifolio = [];
+    // Portfolio
+    $scope.portfolio = [];
     
     window.addEventListener('scroll', () => {
-        document.querySelectorAll('#portifolio-container .row').forEach((element) => {
+        document.querySelectorAll('#portfolio-container .row').forEach((element) => {
             if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 4)))
             element.classList.add('active');
         });
     });
     
-    console.log(portifolio);
+    console.log(portfolio);
     
-    portifolio.forEach((project) => {
+    portfolio.forEach((project) => {
         // Join array to new line
         if(Array.isArray(project.text))
             project.text = project.text.join('\n\r');
         
-        $scope.portifolio.push(project);
+        $scope.portfolio.push(project);
     });
 
     // Contact form
@@ -73,7 +73,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
                 validation = value[0].split('.')[1];
                     
                 if(validation == 'required')
-                    text += 'o \"' + key + '\" é obrigarório<br />';
+                    text += 'o \"' + key + '\" é obrigatório<br />';
                 else
                     text += 'o \"' + key + '\" é inválido<br />';
             });
@@ -89,74 +89,4 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
         });
         return false;
     };
-
-    /*$('#contactForm').submit(function (e) {
-
-        console.log($(this).serialize());
-        //\return false;
-
-        console.log(e);
-        $http({
-            url: 'https://api.daviapps.com/mailto/daviinacio',
-            method: "POST",
-            data: $(this).serialize()
-        })
-        .then(function(response) {
-            console.log(response);
-            // success
-        }, 
-        function(response) { // optional
-            console.error(response);
-            // failed
-        });
-        return false;
-    });*/
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//console.log(github_user);
-
-	//console.log(api_apps);
-
-	/*$scope.user = $http({
-		url: 'https://api.github.com/users/daviinacio',
-		method: 'get',
-		datatype: 'json'
-	});
-	$scope.$apply();
-
-	console.log($scope.user);*/
-
-	/*$.ajax({
-		url: 'https://api.github.com/users/daviinacio',
-		method: 'get',
-		datatype: 'json',
-		success: function(d){
-			console.log(d);
-			$scope.user = d;
-			$scope.$apply();
-		}
-	});*/
-
-    //$('body').$scope().ondev = true;
-    //$('body').$scope().$apply();

@@ -26,8 +26,12 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
                     };
                 });
             },
-            portifolio: function($http, $route){
-                return $http.get('https://gist.githubusercontent.com/daviinacio/1a4ee5de47ce20653b2f641e8f29c14e/raw/portfolio.json').then((response) => {
+            portfolio: function($http, $rootScope){
+                const portfolioUrl = $rootScope.isLocalhost ?
+                        '/gist/portfolio.json' :
+                        'https://gist.githubusercontent.com/daviinacio/1a4ee5de47ce20653b2f641e8f29c14e/raw/portfolio.json';
+                        
+                return $http.get(portfolioUrl).then((response) => {
                     return response.data;
                 })
                 .catch(function(err){

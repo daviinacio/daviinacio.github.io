@@ -228,7 +228,7 @@ div.center {
     max-width: 350px;
 }
 
-#portifolio {
+#portfolio {
     /* margin-top: 100%; */
 }
 
@@ -399,7 +399,7 @@ div[marked] p {
     border-color: var(--background);
 }
 
-#portifolio-container {
+#portfolio-container {
 	max-width: var(--sub-container-max-width2);
 	margin: auto;
 }

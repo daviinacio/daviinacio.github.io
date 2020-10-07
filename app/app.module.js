@@ -12,7 +12,7 @@ app.config(['markedProvider', function (markedProvider) {
     });
 }]);
 
-app.run(function(){    
+app.run(function($rootScope){    
     // Console alert
     if(window.console || "console" in window) {
         console.log("%c DaviApps", "color:darkcyan; font-size:50px;");
@@ -23,7 +23,7 @@ app.run(function(){
     
     document.addEventListener('contextmenu', function(event) {
         if(location.host.includes('gitpod') || location.host.includes('localhost')){
-            console.info("Context menu allowd on development mode");
+            console.info("Context menu allowed on development mode");
 		    return true;
         }
 		else {
@@ -31,21 +31,26 @@ app.run(function(){
 		    return false;
         }
     }, true);
+
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
+        $rootScope.isLocalhost = true;
+        console.log("This application is on localhost");
+    }
 });
 
 app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location, header){
     //$('html, body').
 
-    if(localStorage.getItem('show-wellcome') !== 'false'){
+    if(localStorage.getItem('show-welcome') !== 'false'){
         VanillaToasts.create({
             title: 'Bem-vindo ao meu site.',
-            text: 'Veja meu portifólio e/ou entre em contato pelo formulário abaixo.',
+            text: 'Veja meu portfólio e/ou entre em contato pelo formulário abaixo.',
             type: 'info', // success, info, warning, error   / optional parameter
             icon: 'https://avatars2.githubusercontent.com/u/19656901?v=4', // optional parameter
-            timeout: 5000, // hide after 5000ms, // optional paremter
+            timeout: 5000, // hide after 5000ms, // optional paramter
             callback: function() {
-                // Disable wellcome message
-                localStorage.setItem('show-wellcome', false);
+                // Disable welcome message
+                localStorage.setItem('show-welcome', false);
             } // executed when toast is clicked / optional parameter
         });
     }
@@ -53,13 +58,13 @@ app.controller('myAppCtrl', function($scope, $routeParams, $rootScope, $location
     header.update();
 
     $scope.$on('$routeChangeStart', function(next, current){
-        const reditectTo = {
+        const redirectTo = {
             "/tindev": "/Omnistack8"
         };
 
-        Object.keys(reditectTo).forEach((key) => {
+        Object.keys(redirectTo).forEach((key) => {
             if(location.pathname === key)
-                location.pathname = reditectTo[key];
+                location.pathname = redirectTo[key];
         });
 
 

@@ -17,16 +17,16 @@
     </div>
 </section>
 
-<section id="portifolio" class="full">
+<section id="portfolio" class="full">
     <div class="container">
-        <h1>Portifólio</h1>
+        <h1>Portfólio</h1>
 
-        <div id="portifolio-container" class="animated-row">
-            <div class="row project" ng-repeat="project in portifolio">
+        <div id="portfolio-container" class="animated-row">
+            <div class="row project" ng-repeat="project in portfolio">
                 <div class="col-sm-12 col-md-6 col-lg-7">
                     <h2>{{ project.title }}</h2>
-					<div class="techs" ng-if="project.tecnologies">
-						<span ng-repeat="tech in project.tecnologies">{{ tech }}</span>
+					<div class="techs" ng-if="project.technologies">
+						<span ng-repeat="tech in project.technologies">{{ tech }}</span>
 					</div>
                     <div class="text" marked="project.text"></div>
 
@@ -34,7 +34,7 @@
                 </div>
 
                 <a class="col-sm-12 col-md-6 col-lg-5 btn-overlay" ng-class="project.icon ? 'icon' : ''" href="{{ project.demo_url+project.doc_url }}" target="_black" rel="noreferrer">
-					<img src="{{ project.bunner_url ? project.bunner_url : ( project.icon ? project.icon : '/assets/img/no-image-16x9.png' ) }}"/>
+					<img src="{{ project.banner_url ? project.banner_url : ( project.icon ? project.icon : '/assets/img/no-image-16x9.png' ) }}"/>
                     <div class="middle" ng-if="project.demo_url || project.doc_url">
 						<span class="btn-demo" ng-if="project.demo_url">
 							Demostração
