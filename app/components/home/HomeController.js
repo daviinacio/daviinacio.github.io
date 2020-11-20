@@ -13,7 +13,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
     
     window.addEventListener('scroll', () => {
         document.querySelectorAll('#portfolio-container .row').forEach((element) => {
-            if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 4)))
+            if(window.pageYOffset >= (element.offsetTop - ((window.innerHeight / 4) * 3)))
             element.classList.add('active');
         });
     });
@@ -41,8 +41,13 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
         $('#contactForm *').prop("disabled", true);
 
         // Ajax request
+
+        const apiUrl = $rootScope.isLocalhost ?
+            'http://localhost:3333/form/portfolio?language=pt-BR' :
+            'https://api.daviapps.com/form/portfolio?language=pt-BR';
+            
         $http({
-            url: e.target.action,
+            url: apiUrl,
             method: e.target.method,
             data,
             ocult: true
@@ -66,8 +71,20 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
             $('#contactForm *').prop("disabled", false);
         }, 
         function(response) { // Error
-            const { data } = response;
-            var text = "";
+            const { errors } = response.data;
+            
+            VanillaToasts.create({
+                title: 'Verifique os dados inseridos!',
+                text: errors.join('<br />'),
+                type: 'error',
+                icon: '/assets/img/toast-emoji-error.png',
+                timeout: 3000
+            });
+
+
+            $('#contactForm *').prop("disabled", false);
+
+            /*var text = "";
 
             Object.entries(data).forEach(([key, value]) => {
                 validation = value[0].split('.')[1];
@@ -85,7 +102,7 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
                 timeout: 3000
             });
 
-            $('#contactForm *').prop("disabled", false);
+            $('#contactForm *').prop("disabled", false);*/
         });
         return false;
     };
