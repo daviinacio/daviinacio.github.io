@@ -32,7 +32,7 @@ app.run(function($rootScope){
         }
     }, true);
 
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
+    if (location.hostname.indexOf('.com') === -1){
         $rootScope.isLocalhost = true;
         console.log("This application is on localhost");
     }

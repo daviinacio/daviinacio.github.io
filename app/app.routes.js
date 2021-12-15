@@ -26,11 +26,42 @@ angular.module('myApp').config(function($routeProvider, $locationProvider, $http
                     };
                 });
             },
+            holidaysDecoration: function($http, $rootScope){
+                const holidaysDecorationUrl = $rootScope.isLocalhost ?
+                        '/gist/holidays_decoration.json' :
+                        'https://gist.githubusercontent.com/daviinacio/1a4ee5de47ce20653b2f641e8f29c14e/raw/holidays_decoration.json';
+                 
+                return $http.get(holidaysDecorationUrl).then((response) => {
+                    return response.data;
+                })
+                .catch(function(err){
+                    return {
+                        enableDue: {
+                            startDay: 1,
+                            finishDay: 31
+                        },
+                        hat: {
+                            main: {
+                                translateY: 0,
+                                translateX: 0,
+                                scaleX: 1,
+                                rotate: 0
+                            },
+                            hover: {
+                                translateY: -10,
+                                translateX: 0,
+                                scaleX: 1,
+                                rotate: 0
+                            }
+                        }
+                    };
+                });
+            },
             portfolio: function($http, $rootScope){
                 const portfolioUrl = $rootScope.isLocalhost ?
                         '/gist/portfolio.json' :
                         'https://gist.githubusercontent.com/daviinacio/1a4ee5de47ce20653b2f641e8f29c14e/raw/portfolio.json';
-                        
+                
                 return $http.get(portfolioUrl).then((response) => {
                     return response.data;
                 })

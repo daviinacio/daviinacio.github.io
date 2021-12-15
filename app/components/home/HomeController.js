@@ -1,4 +1,4 @@
-angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, profile, portfolio){
+angular.module('myApp').controller('HomeController', function($rootScope, $scope, $location, $http, profile, portfolio, holidaysDecoration){
 
     // Holidays Decoration
     const today = new Date();
@@ -6,7 +6,32 @@ angular.module('myApp').controller('HomeController', function($rootScope, $scope
 	const month = today.getMonth() + 1;
 	
 	$scope.user = profile;
-	$scope.is_christmas = (month == 12 && day > 10);
+	$scope.is_christmas = (month == 12 && (
+        day >= holidaysDecoration.enableDue.startDay &&
+        day <= holidaysDecoration.enableDue.finishDay
+    ));
+
+    console.log(holidaysDecoration)
+
+    const holidaysDecorationStyle = document.createElement('style')
+    holidaysDecorationStyle.textContent = `
+        #christmas-hat.avatar-hat {
+            transform: 
+                translateY(${holidaysDecoration.hat.main.translateY})
+                translateX(${holidaysDecoration.hat.main.translateX})
+                scaleX(${holidaysDecoration.hat.main.scaleX}) 
+                rotate(${holidaysDecoration.hat.main.rotate}) !important;
+        }
+
+        #christmas-hat.avatar-hat:hover {
+            transform:
+                translateY(${holidaysDecoration.hat.hover.translateY})
+                translateX(${holidaysDecoration.hat.hover.translateX})
+                scaleX(${holidaysDecoration.hat.hover.scaleX}) 
+                rotate(${holidaysDecoration.hat.hover.rotate}) !important;
+        }
+    `
+    document.head.append(holidaysDecorationStyle)
 
     // Portfolio
     $scope.portfolio = [];
